@@ -21,4 +21,8 @@ public class HelloController {
     public String greetUser(@RequestBody User user) {
         return "Hello " + user.getFirstName() + " " + user.getLastName() + " from BridgeLabz";
     }
+    @PutMapping("/hello/put/{firstName}")
+    public String greetUser(@PathVariable String firstName, @RequestParam String lastName) {
+        return "Hello " + firstName + " " + lastName + " from BridgeLabz";
+    }
 }
